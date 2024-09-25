@@ -14,12 +14,15 @@ except ImportError as e:
 
 def SpdxPurl2Url(fp=None):
     spdx = json.load(fp)
+    download_urls=set()
     for package in spdx.get('packages'):
         for externalRef in package.get('externalRefs'):
             if externalRef.get('referenceType') == 'purl':
                 download_url=purl2url.get_download_url(externalRef['referenceLocator'])
                 if download_url:
-                    print(download_url)
+                    download_urls.add(download_url)
+    for url in sorted(download_urls):
+        print(url)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
