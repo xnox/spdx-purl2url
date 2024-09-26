@@ -3,7 +3,7 @@ Extract PURLs from SPDX Json and convert them to Download URLs
 
 # Installation
 
-Encure you have `packageurl-python` installed, i.e. with `pip install packageurl-python`
+Ensure you have `packageurl-python` installed, i.e. with `pip install packageurl-python`
 
 # Example usage
 
